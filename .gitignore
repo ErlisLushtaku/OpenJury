@@ -9,6 +9,10 @@ wheels/
 # Virtual environments
 .venv
 
+# Env files
+.env
+.envrc
+
 # Evaluation data and results
 models/
 openjury-eval-data/

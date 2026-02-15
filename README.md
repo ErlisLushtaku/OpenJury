@@ -41,7 +41,7 @@ uv sync --extra llamacpp   # Optional: install LlamaCpp support
 
 ### Automatic Environment (direnv)
 
-We use `direnv` to automatically manage the virtual environment and environment variables.
+We use `direnv` to automatically manage the environment variables.
 
 1. **Install direnv:**
 ```bash

@@ -60,7 +60,7 @@ dotenv_if_exists
 
 4. **Allow:** Run `direnv allow` to authorize the setup.
 
-5. **Env variables** Add env variables like `OPEN_JURY_EVAL_DATA` to `.env` file.
+5. **Env variables** Add env variables like `OPENJURY_EVAL_DATA` to `.env` file.
 
 ### Basic Evaluation
 

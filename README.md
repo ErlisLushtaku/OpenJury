@@ -53,7 +53,7 @@ curl -sfL https://direnv.net/install.sh | bash
 echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc # or ~/.bashrc depending on which shell you use
 ```
 
-3. **Configure:** Create a `.envrc` file in the project root:
+3. **Configure:** Create a `.envrc` file in the project root with content:
 ```bash
 dotenv_if_exists
 ```

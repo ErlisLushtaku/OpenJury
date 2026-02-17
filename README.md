@@ -47,7 +47,7 @@ Compare two models head-to-head:
 python openjury/generate_and_evaluate.py \
   --dataset alpaca-eval \
   --model_A gpt4_1106_preview \
-  --model_B VLLM/utter-project/EuroLLM-9B-Instruct \
+  --model_B VLLM/utter-project/EuroLLM-9B \
   --judge_model OpenRouter/deepseek/deepseek-chat-v3.1 \
   --n_instructions 10 
 ```
@@ -63,7 +63,7 @@ It will then display the results of the battles:
 ============================================================
                   🏆 MODEL BATTLE RESULTS 🏆                  
 📊 Dataset: alpaca-eval
-🤖 Competitors: Model A: gpt4_1106_preview vs Model B: VLLM/utter-project/EuroLLM-9B-Instruct
+🤖 Competitors: Model A: gpt4_1106_preview vs Model B: VLLM/utter-project/EuroLLM-9B
 ⚖️ Judge: OpenRouter/deepseek/deepseek-chat-v3.1
 📈 Results Summary:
    Total Battles: 10
@@ -73,14 +73,6 @@ It will then display the results of the battles:
    🤝 Ties:   1
 ============================================================
 ```
-
-### Length and Token Parameters
-
-The evaluation scripts expose four different length controls with different roles:
-- `--truncate_all_input_chars`: character-level truncation applied to prompts before model generation and before judge evaluation.
-- `--max_out_tokens_models`: generation token budget for each answer from `model_A` and `model_B`.
-- `--max_out_tokens_judge`: generation token budget for the judge completion (reasoning + score output).
-- `--max_model_len`: optional vLLM context-window limit (prompt + generated tokens), applied to vLLM models; this should be greater than or equal to the two `max_out_tokens_*` values.
 
 ## 🎨 Model Specification
 
@@ -92,7 +84,7 @@ Models are specified using the format: `{LangChain Backend}/{Model Path}`
 Together/meta-llama/Llama-3.3-70B-Instruct-Turbo
 ChatOpenAI/gpt-4o
 LlamaCpp/jwiggerthale_Llama-3.2-3B-Q8_0-GGUF_llama-3.2-3b-q8_0.gguf
-VLLM/utter-project/EuroLLM-9B-Instruct
+VLLM/utter-project/EuroLLM-9B
 OpenRouter/deepseek/deepseek-chat-v3.1
 ```
 
@@ -172,8 +164,8 @@ python -c "from openjury.utils import download_all; download_all()"  # Download 
 ```
 
 Datasets are stored in:
-- `$OPENJURY_DATA` (if set)
-- `~/openjury-data/` (default)
+- `$OPENJURY_EVAL_DATA` (if set)
+- `~/openjury-eval-data/` (default)
 
 ## 🤝 Contributing
 
